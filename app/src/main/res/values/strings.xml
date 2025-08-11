@@ -12,4 +12,8 @@
     <string name="title">Title</string>
     <string name="save_note">Save note</string>
     <string name="content">Content</string>
+    <string name="notes">Notes</string>
+    <string name="this_can_be_note_content_that_can_be_long">this can be note content that can be long</string>
+    <string name="note_title">note title</string>
+    <string name="time_stamp">time stamp</string>
 </resources>

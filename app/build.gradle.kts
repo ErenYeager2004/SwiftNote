@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("com.firebaseui:firebase-ui-firestore:9.0.0")
 
     // Firebase BOM (controls all Firebase versions)
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
