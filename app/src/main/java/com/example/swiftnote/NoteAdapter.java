@@ -1,6 +1,7 @@
 package com.example.swiftnote;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.fido.fido2.Fido2PendingIntent;
 
 public class NoteAdapter extends FirestoreRecyclerAdapter<Note,NoteAdapter.NoteViewHolder> {
     Context context;
@@ -24,6 +26,15 @@ public class NoteAdapter extends FirestoreRecyclerAdapter<Note,NoteAdapter.NoteV
         holder.titleTextView.setText(note.title);
         holder.contentTextView.setText(note.content);
         holder.timeStampTextView.setText(Utility.timestampToString(note.timestamp));
+
+        holder.itemView.setOnClickListener(v->{
+            Intent intent = new Intent(context,NoteDetailsActivity.class);
+            intent.putExtra("title",note.title);
+            intent.putExtra("content",note.content);
+            String docId = this.getSnapshots().getSnapshot(position).getId();
+            intent.putExtra("docId",docId);
+            context.startActivity(intent);
+        });
     }
 
     @NonNull
