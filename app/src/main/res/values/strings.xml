@@ -16,4 +16,5 @@
     <string name="this_can_be_note_content_that_can_be_long">this can be note content that can be long</string>
     <string name="note_title">note title</string>
     <string name="time_stamp">time stamp</string>
+    <string name="delete_note">Delete Note</string>
 </resources>

@@ -75,5 +75,16 @@
             />
 
     </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/detete_note_text_view"
+        android:text="@string/delete_note"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="#FF0000"
+        />
 
 </RelativeLayout>
