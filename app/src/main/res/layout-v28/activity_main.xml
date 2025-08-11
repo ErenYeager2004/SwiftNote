@@ -10,16 +10,16 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_note_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:id="@+id/add_note_btn"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="9dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/white"
         android:outlineAmbientShadowColor="@color/black"
-        android:src="@drawable/baseline_add_24"
-        />
+        android:src="@drawable/baseline_add_24" />
 
 </RelativeLayout>
