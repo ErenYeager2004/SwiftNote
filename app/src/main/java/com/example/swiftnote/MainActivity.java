@@ -2,7 +2,9 @@ package com.example.swiftnote;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +45,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void showMenu(){
-        //display menu
+        PopupMenu popupMenu = new PopupMenu(MainActivity.this,menuBtn);
+        popupMenu.getMenu().add("Logout");
+        popupMenu.show();
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if(menuItem.getTitle()=="Logout"){
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(MainActivity.this,loginActivity.class));
+                    finish();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     void setupRecyclerView(){
