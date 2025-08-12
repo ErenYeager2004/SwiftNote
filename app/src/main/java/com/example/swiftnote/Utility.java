@@ -11,6 +11,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.sql.Time;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class Utility {
     static void showToast(Context context,String message){
@@ -24,7 +26,10 @@ public class Utility {
                 .document(currentUser.getUid()).collection("my_notes");
     }
 
-    static String timestampToString(Timestamp timestamp){
-        return new SimpleDateFormat("MM/DD/YYYY").format(timestamp.toDate());
+    static String timestampToString(Timestamp timestamp) {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
+        sdf.setTimeZone(TimeZone.getDefault()); // Convert UTC to local time
+        return sdf.format(timestamp.toDate());
     }
+
 }

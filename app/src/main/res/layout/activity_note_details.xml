@@ -87,4 +87,19 @@
         android:textColor="#FF0000"
         />
 
+    <ImageButton
+        android:id="@+id/btn_mic"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="top"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="18dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Start speech input"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_btn_speak_now"
+        app:tint="@color/black" />
+
 </RelativeLayout>
